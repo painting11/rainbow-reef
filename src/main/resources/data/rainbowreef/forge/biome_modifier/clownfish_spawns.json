@@ -1,0 +1,12 @@
+{
+  "type" :"forge:add_spawns",
+  "biomes" : [
+    "minecraft:warm_ocean"
+  ],
+  "spawners" : {
+   "type" : "rainbowreef:clownfish",
+    "weight" : 40,
+    "minCount" : 2,
+    "maxCount" : 5
+  }
+}

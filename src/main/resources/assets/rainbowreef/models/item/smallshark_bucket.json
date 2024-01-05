@@ -1,0 +1,33 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "rainbowreef:item/epaulette"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "rainbowreef:variant": 0
+      },
+      "model": "rainbowreef:item/smallshark_bucket"
+    },
+    {
+      "predicate": {
+        "rainbowreef:variant": 1
+      },
+      "model": "rainbowreef:item/horned"
+    },
+    {
+      "predicate": {
+        "rainbowreef:variant": 2
+      },
+      "model": "rainbowreef:item/pajama"
+    }
+  ,
+    {
+      "predicate": {
+        "rainbowreef:variant": 3
+      },
+      "model": "rainbowreef:item/nurse"
+    }
+  ]
+}
