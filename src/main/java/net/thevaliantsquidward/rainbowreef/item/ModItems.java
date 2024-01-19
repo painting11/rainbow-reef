@@ -76,6 +76,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> GOBY_BUCKET = ITEMS.register("goby_bucket", () -> new ItemModFishBucket(ModEntities.GOBY, Fluids.WATER, new Item.Properties()));
 
+    public static final RegistryObject<Item> CRAB_BUCKET = ITEMS.register("crab_bucket", () -> new ItemModFishBucket(ModEntities.CRAB, Fluids.WATER, new Item.Properties()));
+
     public static final RegistryObject<Item> PIPEFISH_BUCKET = ITEMS.register("pipefish_bucket", () -> new ItemModFishBucket(ModEntities.PIPEFISH, Fluids.WATER, new Item.Properties()));
 
     public static final RegistryObject<Item> DWARF_ANGELFISH_BUCKET = ITEMS.register("dwarf_angelfish_bucket", () -> new ItemModFishBucket(ModEntities.DWARFANGEL, Fluids.WATER, new Item.Properties()));
@@ -140,7 +142,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> BUTTERED_BUTTERFLYFISH_TOAST = ITEMS.register("buttered_butterflyfish", () -> new Item(new Item.Properties().craftRemainder(Items.BUCKET).food(new FoodProperties.Builder().nutrition(20).saturationMod(0F).build())));
 
-    public static final RegistryObject<Item> HOGFISH_BACON = ITEMS.register("hogfish_bacon", () -> new Item(new Item.Properties().craftRemainder(Items.BUCKET).food(new FoodProperties.Builder().nutrition(8).saturationMod(1.2F).build())));
+    public static final RegistryObject<Item> HOGFISH_BACON = ITEMS.register("hogfish_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).build())));
+
+    public static final RegistryObject<Item> COOKED_HOGFISH_BACON = ITEMS.register("cooked_hogfish_bacon", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(1.2F).build())));
+
+    public static final RegistryObject<Item> ULTRA_BACON_SANDWICH = ITEMS.register("bacon_sandwich", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1.8F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 0), 1.0F).build())));
 
     public static final RegistryObject<Item> PIPEFISH_SUSHI = ITEMS.register("pipefish_sushi", () -> new Item(new Item.Properties().craftRemainder(Items.BUCKET).food(new FoodProperties.Builder().nutrition(0).saturationMod(0F).alwaysEat().effect(new MobEffectInstance(MobEffects.HEAL, 1, 1), 1F).build())));
 

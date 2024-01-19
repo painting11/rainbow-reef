@@ -62,7 +62,6 @@ public class ClownfishEntity extends AbstractSchoolingFish implements GeoEntity,
             case 4 -> "clownfish_5";
             case 5 -> "clownfish_6";
             case 6 -> "clownfish_7";
-            case 7 -> "clownfish_8";
             default -> "clownfish_3";
         };
     }
@@ -147,9 +146,7 @@ public class ClownfishEntity extends AbstractSchoolingFish implements GeoEntity,
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-              if(variantChange <= 0.12F){
-            this.setVariant(7);
-        }else if(variantChange <= 0.24F){
+        if(variantChange <= 0.24F){
             this.setVariant(6);
         }else if(variantChange <= 0.36F){
             this.setVariant(5);

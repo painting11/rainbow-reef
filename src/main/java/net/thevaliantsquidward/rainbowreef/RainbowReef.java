@@ -92,7 +92,10 @@ public class RainbowReef
             EntityRenderers.register
                     (ModEntities.PIPEFISH.get(), PipefishRenderer:: new);
             EntityRenderers.register
+                    (ModEntities.CRAB.get(), CrabRenderer:: new);
+            EntityRenderers.register
                     (ModEntities.RAY.get(), RayRenderer:: new);
+
         }
     }
 }
