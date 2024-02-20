@@ -11,7 +11,7 @@
   "item.rainbowreef.seahorse_bucket" : "海马桶",
   "item.rainbowreef.spotted_eagle_ray_bucket" : "鳐鱼桶",
   "item.rainbowreef.parrotfish_bucket" : "鹦嘴鱼桶",
-  "item.rainbowreef.hogfish_bucket" : "猪鱼桶",
+  "item.rainbowreef.hogfish_bucket" : "猪隆头鱼桶",
   "item.rainbowreef.basslet_bucket" : "海鲈鱼桶",
   "item.rainbowreef.pipefish_bucket" : "海龙鱼桶",
 
@@ -24,7 +24,7 @@
   "item.rainbowreef.raw_clownfish" : "生小丑鱼",
   "item.rainbowreef.raw_butterflyfish" : "生蝴蝶鱼",
   "item.rainbowreef.raw_parrotfish" : "生鹦嘴鱼",
-  "item.rainbowreef.raw_hogfish" : "生猪鱼",
+  "item.rainbowreef.raw_hogfish" : "生猪隆头鱼",
   "item.rainbowreef.raw_basslet" : "生海鲈鱼",
   "item.rainbowreef.raw_pipefish" : "生海龙鱼",
 
@@ -37,7 +37,7 @@
   "item.rainbowreef.dwarf_angelfish_tarts" : "天使蛋挞",
   "item.rainbowreef.basslet_cookie" : "海鲈甜饼",
   "item.rainbowreef.buttered_butterflyfish" : "奶油鲽鱼土司",
-  "item.rainbowreef.hogfish_bacon" : "生猪鱼片",
+  "item.rainbowreef.hogfish_bacon" : "生猪隆头鱼片",
   "item.rainbowreef.pipefish_sushi" : "海龙卷寿司",
   "item.rainbowreef.cooked_hogfish_bacon" : "Cooked Hogfish Bacon",
   "item.rainbowreef.bacon_sandwich" : "Ultra Bacon Sandwich",
@@ -51,7 +51,7 @@
   "item.rainbowreef.seahorse_spawn_egg" : "海马刷怪蛋",
   "item.rainbowreef.dwarf_angelfish_spawn_egg" : "侏儒天使鱼刷怪蛋",
   "item.rainbowreef.parrotfish_spawn_egg" : "鹦嘴鱼刷怪蛋",
-  "item.rainbowreef.hogfish_spawn_egg" : "猪鱼刷怪蛋",
+  "item.rainbowreef.hogfish_spawn_egg" : "猪隆头鱼刷怪蛋",
   "item.rainbowreef.basslet_spawn_egg" : "海鲈鱼刷怪蛋",
   "item.rainbowreef.ray_spawn_egg" : "鳐鱼刷怪蛋",
   "item.rainbowreef.pipefish_spawn_egg" : "海龙鱼刷怪蛋",
@@ -164,7 +164,7 @@
   "entity.rainbowreef.seahorse" : "海马",
   "entity.rainbowreef.dwarf_angelfish" : "侏儒天使鱼",
   "entity.rainbowreef.parrotfish" : "鹦嘴鱼",
-  "entity.rainbowreef.hogfish" : "猪鱼",
+  "entity.rainbowreef.hogfish" : "猪隆头鱼",
   "entity.rainbowreef.basslet" : "海鲈鱼",
   "entity.rainbowreef.pipefish" : "海龙鱼",
   "entity.rainbowreef.ray" : "鳐鱼",
@@ -177,7 +177,7 @@
   "advancements.husbandry.collect_goby.description" : "收集虾虎鱼变种",
 
   "advancements.husbandry.collect_hogfish.title" : "放纵",
-  "advancements.husbandry.collect_hogfish.description" : "收集猪鱼变种",
+  "advancements.husbandry.collect_hogfish.description" : "收集猪隆头鱼变种",
 
   "advancements.husbandry.collect_ray.title" : "让我们给饼干起名",
   "advancements.husbandry.collect_ray.description" : "收集鳐鱼",
@@ -185,7 +185,7 @@
   "advancements.husbandry.collect_parrotfish.title" : "柏莉想要一块饼干",
   "advancements.husbandry.collect_parrotfish.description" : "收集鹦嘴鱼变种",
 
-  "advancements.husbandry.collect_basslet.title" : "True Royalty",
+  "advancements.husbandry.collect_basslet.title" : "真假版权",
   "advancements.husbandry.collect_basslet.description" : "收集海鲈鱼变种",
 
 
