@@ -39,7 +39,7 @@
   "item.rainbowreef.buttered_butterflyfish" : "奶油鲽鱼土司",
   "item.rainbowreef.hogfish_bacon" : "生猪隆头鱼片",
   "item.rainbowreef.pipefish_sushi" : "海龙卷寿司",
-  "item.rainbowreef.cooked_hogfish_bacon" : "Cooked Hogfish Bacon",
+  "item.rainbowreef.cooked_hogfish_bacon" : "熟猪隆头鱼片",
   "item.rainbowreef.bacon_sandwich" : "Ultra Bacon Sandwich",
 
   "item.rainbowreef.goby_spawn_egg" : "虾虎鱼刷怪蛋",
@@ -173,7 +173,7 @@
   "advancements.husbandry.collect_all.title" : "与彩虹的接触",
   "advancements.husbandry.collect_all.description" : "收集每种鱼的变种",
 
-  "advancements.husbandry.collect_goby.title" : "虾虎鱼很棒？我希望你能做到！",
+  "advancements.husbandry.collect_goby.title" : "虾虎鱼很棒？我希望你能捉到！",
   "advancements.husbandry.collect_goby.description" : "收集虾虎鱼变种",
 
   "advancements.husbandry.collect_hogfish.title" : "放纵",
@@ -195,7 +195,7 @@
   "advancements.husbandry.collect_butter.title" : "蝴蝶鱼？哪里？",
   "advancements.husbandry.collect_butter.description" : "收集蝴蝶鱼变种",
 
-  "advancements.husbandry.collect_clownfish.title" : "You Found Nemo",
+  "advancements.husbandry.collect_clownfish.title" : "我看见了尼莫",
   "advancements.husbandry.collect_clownfish.description" : "收集小丑鱼变种",
 
   "advancements.husbandry.collect_seahorse.title" : "我看见了一匹马",
