@@ -1,5 +1,6 @@
 {
   "creativetab.rainbow_reef_tab" : "Rainbow Reef",
+  "creativetab.rainbow_reef_block_tab" : "Rainbow Reef Blocks",
 
   "item.rainbowreef.goby_bucket" : "Bucket of Goby",
   "item.rainbowreef.tang_bucket" : "Bucket of Tang",
@@ -14,6 +15,7 @@
   "item.rainbowreef.hogfish_bucket" : "Bucket of Hogfish",
   "item.rainbowreef.basslet_bucket" : "Bucket of Basslet",
   "item.rainbowreef.pipefish_bucket" : "Bucket of Pipefish",
+  "item.rainbowreef.crab_bucket" : "Bucket of Crab",
 
 
   "item.rainbowreef.raw_goby" : "Raw Goby",
@@ -155,6 +157,13 @@
   "entity.rainbowreef.pipefish.variant_bluestriped": "Bluestriped",
   "entity.rainbowreef.pipefish.variant_pink": "Pink",
 
+  "entity.rainbowreef.crab.variant_vampire": "Vampire",
+  "entity.rainbowreef.crab.variant_halloween": "Halloween",
+  "entity.rainbowreef.crab.variant_emerald": "Emerald",
+  "entity.rainbowreef.crab.variant_ghost": "Ghost",
+  "entity.rainbowreef.crab.variant_blue": "Blue",
+  "entity.rainbowreef.crab.variant_purple": "Purple",
+
   "entity.rainbowreef.goby" : "Goby",
   "entity.rainbowreef.tang" : "Tang",
   "entity.rainbowreef.boxfish" : "Boxfish",
@@ -167,6 +176,7 @@
   "entity.rainbowreef.hogfish" : "Hogfish",
   "entity.rainbowreef.basslet" : "Basslet",
   "entity.rainbowreef.pipefish" : "Pipefish",
+  "entity.rainbowreef.crab" : "Crab",
 
 
   "advancements.husbandry.collect_all.title" : "The Rainbow Connection",

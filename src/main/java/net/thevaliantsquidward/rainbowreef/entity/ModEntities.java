@@ -20,6 +20,12 @@ public class ModEntities {
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "goby").toString()));
 
+    public static final RegistryObject<EntityType<MoorishIdolEntity>> MOORISH_IDOL =
+            ENTITY_TYPES.register("moorish_idol",
+                    () -> EntityType.Builder.of(MoorishIdolEntity::new, MobCategory.WATER_AMBIENT)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "moorish_idol").toString()));
+
     public static final RegistryObject<EntityType<TangEntity>> TANG =
             ENTITY_TYPES.register("tang",
                     () -> EntityType.Builder.of(TangEntity::new, MobCategory.WATER_AMBIENT)
@@ -100,6 +106,11 @@ public class ModEntities {
                             .sized(1f, 0.6f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "ray").toString()));
 
+    public static final RegistryObject<EntityType<AngelfishEntity>> ANGELFISH =
+            ENTITY_TYPES.register("angelfish",
+                    () -> EntityType.Builder.of(AngelfishEntity::new, MobCategory.WATER_AMBIENT)
+                            .sized(0.6f, 0.6f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "angelfish").toString()));
 
 
     public static void register(IEventBus eventBus) {

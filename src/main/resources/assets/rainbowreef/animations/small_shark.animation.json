@@ -1,73 +1,50 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.small_shark.move": {
+		"animation": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
 				"root": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, 5, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [0, -5, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"body": {
-					"rotation": {
-						"vector": [0, 0, 0]
+						"vector": ["math.sin(query.anim_time * 180) * 5", "math.sin(query.anim_time * 360) * 10", 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*180-30)*-1", 0]
 					}
 				},
 				"tail": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, -17.5, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [0, 17.5, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
+						"vector": [0, "math.cos((query.anim_time - 60) * 360)* -15", 0]
 					}
 				},
 				"tail_fin": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, -20, 0]
-						},
-						"0.8333": {
-							"vector": [0, -3.62, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [0, 20, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
+						"vector": [0, "math.cos((query.anim_time - 80)* 360) * -15", 0]
+					}
+				}
+			}
+		},
+		"animation2": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"root": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * 2", 0, 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time * 180 - 30) * -0.5", 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": ["math.cos((query.anim_time - 40) * 180)* -2", 0, 0]
+					}
+				},
+				"tail_fin": {
+					"rotation": {
+						"vector": ["math.cos((query.anim_time - 80) * 180) * -2", 0, 0]
 					}
 				}
 			}

@@ -1,15 +1,12 @@
 package net.thevaliantsquidward.rainbowreef.entity.custom;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -22,52 +19,45 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.block.BeehiveBlock;
-import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraft.world.phys.Vec3;
-import net.thevaliantsquidward.rainbowreef.entity.goalz.CrabBottomWander;
-import net.thevaliantsquidward.rainbowreef.entity.goalz.CrabFindWater;
-import net.thevaliantsquidward.rainbowreef.entity.goalz.CrabLeaveWater;
-import net.thevaliantsquidward.rainbowreef.entity.goalz.CrabPathfinder;
 import net.thevaliantsquidward.rainbowreef.item.ModItems;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
-public class CrabEntity extends Animal implements GeoEntity, Bucketable {
+public class AngelfishEntity extends AbstractFish implements GeoEntity, Bucketable {
+
+
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    //crabbing about
-    //the crabby beast
-    //crabbed to meet you
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(AngelfishEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(AngelfishEntity.class, EntityDataSerializers.INT);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(TangEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(TangEntity.class, EntityDataSerializers.INT);
-
-
-    public CrabEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
-        this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 0.0F);
+    public static String getVariantName(int variant) {
+        return switch (variant) {
+            case 1 -> "french";
+            case 2 -> "queen";
+            case 3 -> "bluering";
+            case 4 -> "yellowband";
+            case 5 -> "masked";
+            default -> "emperor";
+        };
     }
-
 
     @Override
     protected void defineSynchedData() {
@@ -79,7 +69,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     @Override
     @Nonnull
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(ModItems.CRAB_BUCKET.get());
+        ItemStack stack = new ItemStack(ModItems.DWARF_ANGELFISH_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }
@@ -106,7 +96,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
 
     @Override
     @Nonnull
-    public InteractionResult mobInteract(@Nonnull Player player, @Nonnull InteractionHand hand) {
+    protected InteractionResult mobInteract(@Nonnull Player player, @Nonnull InteractionHand hand) {
         return Bucketable.bucketMobPickup(player, hand, this).orElse(super.mobInteract(player, hand));
     }
 
@@ -145,34 +135,22 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     public SoundEvent getPickupSound() {
         return SoundEvents.BUCKET_FILL_FISH;
     }
-    public static String getVariantName(int variant) {
-        return switch (variant) {
-            case 1 -> "halloween";
-            case 2 -> "ghost";
-            case 3 -> "sally";
-            case 4 -> "emerald";
-            case 5 -> "blue";
-            case 6 -> "purple";
-            default -> "vampire";
-        };
-    }
-    @javax.annotation.Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @javax.annotation.Nullable SpawnGroupData spawnDataIn, @javax.annotation.Nullable CompoundTag dataTag) {
+
+    @Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        Holder<Biome> holder = worldIn.getBiome(this.blockPosition());
-        if (holder.is(Biomes.MANGROVE_SWAMP)) {
-            this.setVariant(1);
-        } else if (holder.is(Biomes.BEACH)) {
-            this.setVariant(2);
-        }  else if (holder.is(Biomes.STONY_SHORE)) {
-            this.setVariant(3);
-        }  else if (holder.is(Biomes.LUKEWARM_OCEAN)) {
+
+        if(variantChange <= 0.16F){
             this.setVariant(4);
-        } if (holder.is(Biomes.OCEAN)) {
-            this.setVariant(5);
-        } if (holder.is(Biomes.COLD_OCEAN)) {
-            this.setVariant(6);
-        } else {
+        }else if(variantChange <= 0.32F){
+            this.setVariant(3);
+        }else if(variantChange <= 0.48F){
+            this.setVariant(2);
+        }else if(variantChange <= 0.64F){
+            this.setVariant(1);
+        }else if(variantChange <= 0.80F){
+            this.setVariant(1);
+        } else{
             this.setVariant(0);
         }
         return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
@@ -180,55 +158,29 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
 
 
     public MobType getMobType() {
-        return MobType.ARTHROPOD;
+        return MobType.WATER;
     }
+
+    public AngelfishEntity(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
+
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 2D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ARMOR, 2.0D)
+                .add(Attributes.MAX_HEALTH, 4D)
+                .add(Attributes.MOVEMENT_SPEED, 0.7D)
                 .build();
-    }
-
-    public boolean canBreatheUnderwater() {
-        return true;
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new CrabFindWater(this));
-        this.goalSelector.addGoal(1, new CrabLeaveWater(this));
-        this.goalSelector.addGoal(3, new CrabBottomWander(this, 1.0D, 10, 50));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
-
+        this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
+        this.goalSelector.addGoal(2, new RandomSwimmingGoal(this, 0.8D, 1));
     }
-    protected PathNavigation createNavigation(Level worldIn) {
-        CrabPathfinder crab = new CrabPathfinder(this, worldIn) {
-            public boolean isStableDestination(BlockPos pos) {
-                return this.level.getBlockState(pos).getFluidState().isEmpty();
-            }
-        };
-        return crab;
-    }
-    public void travel(Vec3 travelVector) {
-        if (this.isEffectiveAi() && this.isInWater()) {
-            this.moveRelative(this.getSpeed(), travelVector);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-            if(this.jumping){
-                this.setDeltaMovement(this.getDeltaMovement().scale(1.4D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, 0.72D, 0.0D));
-            }else{
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.4D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.08D, 0.0D));
-            }
 
-        } else {
-            super.travel(travelVector);
-        }
-
-    }
 
     protected SoundEvent getAmbientSound() {
         return SoundEvents.TROPICAL_FISH_AMBIENT;
@@ -242,25 +194,28 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         return SoundEvents.TROPICAL_FISH_HURT;
     }
 
+
+    @Override
+    protected SoundEvent getFlopSound() {
+        return SoundEvents.TROPICAL_FISH_FLOP;
+    }
+
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.clownfish.move", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.dwarf_angelfish.e", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
-
+    public static <T extends Mob> boolean canSpawn(EntityType<AngelfishEntity> p_223364_0_, LevelAccessor p_223364_1_, MobSpawnType reason, BlockPos p_223364_3_, RandomSource p_223364_4_) {
+        return WaterAnimal.checkSurfaceWaterAnimalSpawnRules(p_223364_0_, p_223364_1_, reason, p_223364_3_, p_223364_4_);
+    }
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
 
 
-    @Nullable
-    @Override
-    public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return null;
-    }
 }

@@ -90,6 +90,16 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
                         pOutput.accept(ModItems.DRIED_SEAHORSE.get());
                         pOutput.accept(ModItems.TANGY_SOUP.get());
 
+
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> RAINBOW_REEF_BLOCKS = CREATIVE_MODE_TABS.register("rainbow_reef_block_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CORALSTONE.get()))
+                    .title(Component.translatable("creativetab.rainbow_reef_block_tab"))
+                    .displayItems((pParameters, pOutput) -> {
+
+
                         pOutput.accept(ModBlocks.CORALSTONE.get());
                         pOutput.accept(ModBlocks.CORALSTONE_BRICKS.get());
                         pOutput.accept(ModBlocks.POLISHED_CORALSTONE.get());

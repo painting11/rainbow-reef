@@ -6,8 +6,8 @@
   ],
   "spawners" : {
    "type" : "rainbowreef:parrotfish",
-    "weight" : 20,
+    "weight" : 16,
     "minCount" : 1,
-    "maxCount" : 8
+    "maxCount" : 7
   }
 }
