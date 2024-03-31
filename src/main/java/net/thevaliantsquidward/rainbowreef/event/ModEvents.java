@@ -81,6 +81,7 @@ public final class ModEvents {
         event.put(ModEntities.CRAB.get(), CrabEntity.setAttributes());
         event.put(ModEntities.MOORISH_IDOL.get(), CrabEntity.setAttributes());
         event.put(ModEntities.ANGELFISH.get(), AngelfishEntity.setAttributes());
+        event.put(ModEntities.ARROW_CRAB.get(), ArrowCrabEntity.setAttributes());
     }
 
 

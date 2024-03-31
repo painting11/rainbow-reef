@@ -81,6 +81,12 @@ public class ModEntities {
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "crab").toString()));
 
+    public static final RegistryObject<EntityType<ArrowCrabEntity>> ARROW_CRAB =
+            ENTITY_TYPES.register("arrow_crab",
+                    () -> EntityType.Builder.of(ArrowCrabEntity::new, MobCategory.CREATURE)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "arrow_crab").toString()));
+
 
     public static final RegistryObject<EntityType<BassletEntity>> BASSLET =
             ENTITY_TYPES.register("basslet",
