@@ -53,6 +53,7 @@ public class ButterfishEntity extends AbstractSchoolingFish implements GeoEntity
             case 4 -> "bluecheek";
             case 5 -> "longnose";
             case 6 -> "spotfin";
+            case 7 -> "hooded";
             default -> "copperbanded";
         };
     }
@@ -139,20 +140,21 @@ public class ButterfishEntity extends AbstractSchoolingFish implements GeoEntity
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.14F){
+        if(variantChange <= 0.12F){
             this.setVariant(6);
-        }else
-        if(variantChange <= 0.28F){
+        }else if(variantChange <= 0.24F){
             this.setVariant(5);
-        }else if(variantChange <= 0.42F){
+        }else if(variantChange <= 0.36F){
             this.setVariant(4);
-        }else if(variantChange <= 0.56F){
+        }else if(variantChange <= 0.48F){
             this.setVariant(3);
-        }else if(variantChange <= 0.80F){
+        }else if(variantChange <= 0.60F){
             this.setVariant(2);
-        }else if(variantChange <= 0.94F){
+        }else if(variantChange <= 0.72F){
             this.setVariant(1);
-        }else{
+        }else if(variantChange <= 0.84F){
+            this.setVariant(7);
+        } else{
             this.setVariant(0);
         }
         return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);

@@ -15,6 +15,8 @@ public class ButterfishRenderer extends GeoEntityRenderer<ButterfishEntity> {
     private static final ResourceLocation BLUECHEEK = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/bluecheek.png");
     private static final ResourceLocation LONGNOSE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/longnose.png");
     private static final ResourceLocation SPOTFIN = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/spotfin.png");
+    private static final ResourceLocation HOODED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/hooded.png");
+
     public ButterfishRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new ButterfishModel());
     }
@@ -31,6 +33,7 @@ public class ButterfishRenderer extends GeoEntityRenderer<ButterfishEntity> {
             case 4 -> BLUECHEEK;
             case 5 -> LONGNOSE;
             case 6 -> SPOTFIN;
+            case 7 -> HOODED;
             default -> COPPERBAND;
         };
     }

@@ -54,7 +54,7 @@ public class AngelfishEntity extends AbstractFish implements GeoEntity, Bucketab
             case 2 -> "queen";
             case 3 -> "bluering";
             case 4 -> "yellowband";
-            case 5 -> "masked";
+            case 5 -> "rockbeauty";
             default -> "emperor";
         };
     }
@@ -149,7 +149,7 @@ public class AngelfishEntity extends AbstractFish implements GeoEntity, Bucketab
         }else if(variantChange <= 0.64F){
             this.setVariant(1);
         }else if(variantChange <= 0.80F){
-            this.setVariant(1);
+            this.setVariant(5);
         } else{
             this.setVariant(0);
         }

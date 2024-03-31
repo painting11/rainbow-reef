@@ -73,6 +73,8 @@
   "entity.rainbowreef.goby.variant_candycane": "Candycane",
   "entity.rainbowreef.goby.variant_yellowwatchman": "Yellow Watchman",
   "entity.rainbowreef.goby.variant_catalina": "Catalina",
+  "entity.rainbowreef.goby.variant_blackray": "Black Ray",
+  "entity.rainbowreef.goby.variant_helfrichi": "Helfrichi Fire",
 
   "entity.rainbowreef.basslet.variant_fairy": "Fairy",
   "entity.rainbowreef.basslet.variant_brazilian": "Brazilian",
@@ -81,6 +83,7 @@
   "entity.rainbowreef.basslet.variant_blackcap": "Blackcap",
   "entity.rainbowreef.basslet.variant_gold": "Gold",
   "entity.rainbowreef.basslet.variant_gilded": "Platinum",
+  "entity.rainbowreef.basslet.variant_swissguard": "Swissguard",
 
   "entity.rainbowreef.hogfish.variant_cuban": "Cuban",
   "entity.rainbowreef.hogfish.variant_spanish": "Spanish",
@@ -100,6 +103,7 @@
   "entity.rainbowreef.tang.variant_distorted": "Distorted",
   "entity.rainbowreef.tang.variant_pearly": "Pearly",
   "entity.rainbowreef.tang.variant_black": "Black",
+  "entity.rainbowreef.tang.variant_gem": "Gem",
 
   "entity.rainbowreef.clownfish.variant_clownfish_1": "Ocellaris",
   "entity.rainbowreef.clownfish.variant_clownfish_2": "Maroon",
@@ -149,6 +153,7 @@
   "entity.rainbowreef.butterflyfish.variant_longnose": "Longnose",
   "entity.rainbowreef.butterflyfish.variant_spotfin": "Spotfin",
   "entity.rainbowreef.butterflyfish.variant_copperbanded": "Copperband",
+  "entity.rainbowreef.butterflyfish.variant_hooded": "Hooded",
 
   "entity.rainbowreef.pipefish.variant_green": "Green",
   "entity.rainbowreef.pipefish.variant_janns": "Janns",

@@ -13,7 +13,7 @@ public class AngelfishRenderer extends GeoEntityRenderer<AngelfishEntity> {
     private static final ResourceLocation QUEEN = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/queenangel.png");
     private static final ResourceLocation YELLOWBAND = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/yellowbandangel.png");
     private static final ResourceLocation BLUERING = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/blueringangel.png");
-    private static final ResourceLocation MASKED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/maskedangel.png");
+    private static final ResourceLocation ROCKBEAUTY = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/rockbeautyangel.png");
 
 
     public AngelfishRenderer(EntityRendererProvider.Context renderManagerIn) {
@@ -30,7 +30,8 @@ public class AngelfishRenderer extends GeoEntityRenderer<AngelfishEntity> {
             case 2 -> QUEEN;
             case 3 -> YELLOWBAND;
             case 4 -> BLUERING;
-            case 5 -> MASKED;
+            case 5 -> ROCKBEAUTY;
+
             default -> EMPEROR;
         };
     }

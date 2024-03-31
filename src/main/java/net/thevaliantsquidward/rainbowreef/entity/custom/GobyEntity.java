@@ -57,6 +57,8 @@ public class GobyEntity extends AbstractFish implements GeoEntity, Bucketable {
             case 3 -> "mandarin";
             case 4 -> "yellowwatchman";
             case 5 -> "catalina";
+            case 6 -> "blackray";
+            case 7 -> "helfrichi";
             default -> "fire";
         };
     }
@@ -141,15 +143,19 @@ public class GobyEntity extends AbstractFish implements GeoEntity, Bucketable {
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.16F){
+        if(variantChange <= 0.12F){
+            this.setVariant(7);
+        }else if(variantChange <= 0.24F){
+            this.setVariant(6);
+        }else if(variantChange <= 0.36F){
             this.setVariant(5);
-        }else if(variantChange <= 0.32F){
-            this.setVariant(4);
         }else if(variantChange <= 0.48F){
+            this.setVariant(4);
+        }else if(variantChange <= 0.60F){
             this.setVariant(3);
-        }else if(variantChange <= 0.64F){
+        }else if(variantChange <= 0.72F){
             this.setVariant(2);
-        }else if(variantChange <= 0.80F){
+        }else if(variantChange <= 0.84F){
             this.setVariant(1);
         }else{
             this.setVariant(0);

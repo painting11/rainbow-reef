@@ -16,6 +16,7 @@ public class BassletRenderer extends GeoEntityRenderer<BassletEntity> {
     private static final ResourceLocation CANDY = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/candy.png");
     private static final ResourceLocation GOLD = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/goldbasslet.png");
     private static final ResourceLocation GILDED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/gilded.png");
+    private static final ResourceLocation SWISSGUARD = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/swissguard.png");
 
     public BassletRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new BassletModel());
@@ -33,6 +34,7 @@ public class BassletRenderer extends GeoEntityRenderer<BassletEntity> {
             case 4 -> CANDY;
             case 5 -> GOLD;
             case 6 -> GILDED;
+            case 7 -> SWISSGUARD;
             default -> FAIRY;
         };
     }
