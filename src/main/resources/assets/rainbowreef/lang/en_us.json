@@ -142,9 +142,11 @@
 
   "entity.rainbowreef.dwarf_angelfish.variant_bicolor": "Bicolor",
   "entity.rainbowreef.dwarf_angelfish.variant_coralbeauty": "Coral Beauty",
-  "entity.rainbowreef.dwarf_angelfish.variant_candycane": "Candy Cane",
+  "entity.rainbowreef.dwarf_angelfish.variant_candycane": "Peppermint",
   "entity.rainbowreef.dwarf_angelfish.variant_flame": "Flame",
   "entity.rainbowreef.dwarf_angelfish.variant_spotted": "Spotted",
+  "entity.rainbowreef.dwarf_angelfish.variant_cherub": "Cherub",
+  "entity.rainbowreef.dwarf_angelfish.variant_masked": "Masked",
 
   "entity.rainbowreef.butterflyfish.variant_easterisland": "Easter Island",
   "entity.rainbowreef.butterflyfish.variant_threadfin": "Threadfin",

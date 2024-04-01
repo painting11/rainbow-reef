@@ -13,6 +13,8 @@ public class DwarfAngelfishRenderer extends GeoEntityRenderer<DwarfAngelfishEnti
     private static final ResourceLocation CANDY_CANE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/cand_cane.png");
     private static final ResourceLocation FLAME = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/flame.png");
     private static final ResourceLocation SPOTTED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/spotted.png");
+    private static final ResourceLocation MASKED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/masked.png");
+    private static final ResourceLocation CHERUB = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/cherubfish.png");
 
 
     public DwarfAngelfishRenderer(EntityRendererProvider.Context renderManagerIn) {
@@ -29,6 +31,8 @@ public class DwarfAngelfishRenderer extends GeoEntityRenderer<DwarfAngelfishEnti
             case 2 -> CANDY_CANE;
             case 3 -> FLAME;
             case 4 -> SPOTTED;
+            case 5 -> MASKED;
+            case 6 -> CHERUB;
             default -> BICOLOR;
         };
     }

@@ -54,6 +54,8 @@ public class DwarfAngelfishEntity extends AbstractFish implements GeoEntity, Buc
             case 2 -> "candycane";
             case 3 -> "flame";
             case 4 -> "spotted";
+            case 5 -> "masked";
+            case 6 -> "cherub";
             default -> "bicolor";
         };
     }
@@ -139,14 +141,18 @@ public class DwarfAngelfishEntity extends AbstractFish implements GeoEntity, Buc
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
 
-        if(variantChange <= 0.20F){
+        if(variantChange <= 0.14F){
             this.setVariant(4);
-        }else if(variantChange <= 0.40F){
+        }else if(variantChange <= 0.28F){
             this.setVariant(3);
-        }else if(variantChange <= 0.60F){
+        }else if(variantChange <= 0.42F){
             this.setVariant(2);
-        }else if(variantChange <= 0.80F){
+        }else if(variantChange <= 0.54F){
             this.setVariant(1);
+        }else if(variantChange <= 0.68F){
+            this.setVariant(5);
+        }else if(variantChange <= 0.82F){
+            this.setVariant(6);
         }else{
             this.setVariant(0);
         }
