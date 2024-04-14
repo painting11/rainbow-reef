@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "rainbowreef:block/orange_puffer_lantern"
+    },
+    "hanging=true": {
+      "model": "rainbowreef:block/orange_puffer_lantern_hanging"
+    }
+  },
+  "facing=east": {
+    "model": "rainbowreef:block/orange_puffer_lantern",
+    "y": 90
+  },
+  "facing=north": {
+    "model": "rainbowreef:block/orange_puffer_lantern"
+  },
+  "facing=south": {
+    "model": "rainbowreef:block/orange_puffer_lantern",
+    "y": 180
+  },
+  "facing=west": {
+    "model": "rainbowreef:block/orange_puffer_lantern",
+    "y": 270
+  }
+}
